@@ -13,3 +13,8 @@ class BankBranch {
         return bankBranchInstance;
     }
 
+    // Step 4: Method to retrieve branch information
+    getBranchInfo() {
+        return this.branchInfo; // Return the stored branch information
+    }
+}
