@@ -18,3 +18,23 @@ class BankBranch {
         return this.branchInfo; // Return the stored branch information
     }
 }
+// Step 5: Create two instances of BankBranch with different information
+const branchA = new BankBranch({ name: 'Downtown', address: '123 Main St' });
+const branchB = new BankBranch({ name: 'Uptown', address: '456 High St' });
+
+// Verifying that both instances refer to the same object
+console.log(branchA === branchB); // Output: true, proving it's a singleton
+
+// Display branch information
+console.log(branchA.getBranchInfo()); // Output: { name: 'Downtown', address: '123 Main St' }
+console.log(branchB.getBranchInfo()); // Output: { name: 'Downtown', address: '123 Main St' }
+
+// Dynamically adding an h1 element with branch info
+const bodyElement = document.querySelector('body');
+
+// Create an h1 element to display bank branch information
+const heading = document.createElement('h1');
+heading.textContent = `Branch Name: ${branchA.getBranchInfo().name}, Branch Address: ${branchA.getBranchInfo().address}`;
+
+// Append the h1 element to the body
+bodyElement.appendChild(heading);
